@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:widgets_app/config/constants/app_menu_items.dart';
+import 'package:widgets_app/presentation/presentation.dart';
 
 class ProgressBarScreen extends StatelessWidget {
   const ProgressBarScreen({super.key});
@@ -11,8 +13,12 @@ class ProgressBarScreen extends StatelessWidget {
         title: const Text('Progress Screen')
       ),
       body: const Center(
-        child: Hero(tag: progressHeroTag, child:  CircularProgressIndicator()),
+        child: Hero(tag: ConstantsItems.progressHeroTag, child:  CustomCircularProgressBar()),
       ),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        context.read<ProgressBloc>().increasePercentage();
+      },
+      child: const Icon(Icons.refresh),),
     );
   }
 }

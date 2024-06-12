@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 20,),
-              ...appMenuItems.map((item) => CustomItemCard(item: item))
+              ...ConstantsItems.appMenuItems.map((item) => CustomItemCard(item: item))
             ],
           ),
         )),

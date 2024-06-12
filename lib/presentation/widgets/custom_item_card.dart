@@ -15,6 +15,7 @@ class CustomItemCard extends StatelessWidget {
         onTap: () => context.push(item.link),
         child: Container(
           margin: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           constraints: const BoxConstraints(
               minHeight: 200, maxHeight: 200, minWidth: 200, maxWidth: 200),
           decoration: containerDecoration(colors),
@@ -24,20 +25,15 @@ class CustomItemCard extends StatelessWidget {
             children: [
 
               Text(item.title,
-              style: textStyle.titleLarge?.copyWith(
+              textAlign: TextAlign.center,
+              style: textStyle.titleMedium?.copyWith(
                 fontWeight: FontWeight.w200
               ),),
 
               const SizedBox(height: 20,),
-
-              Text(item.subTitle,
-              textAlign: TextAlign.center,
-              style: textStyle.bodyLarge?.copyWith(
-                fontWeight: FontWeight.w200,
-              ),),
-
-              const SizedBox(height: 20,),
-              item.icon
+              Expanded(
+                child: item.icon,
+              )
             ],
           ),
         ));
