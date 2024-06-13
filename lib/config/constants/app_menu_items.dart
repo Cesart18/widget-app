@@ -27,15 +27,12 @@ class ConstantsItems {
         child: Hero(tag: educationHeroTag, child: SvgPicture.asset('assets/svgs/educador.svg')),
       ),
       ),
-  const MenuItem(
-      title: 'Tarjeta educativa',
-      link: '/education-card',
-      icon:  Hero(tag: quizHeroTag, child: Icon(Icons.abc)),
+   MenuItem(
+      title: 'Quiz',
+      link: '/quiz',
+      icon:  Hero(tag: quizHeroTag, child: SvgPicture.asset('assets/svgs/reloj.svg')),
       ),
-  
 ];
-
-  
 
 }
 

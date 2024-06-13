@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 /// Un widget que muestra una tarjeta educativa con una imagen de fondo, título,
 /// subtítulo y una barra de progreso que indica un porcentaje de finalización.
@@ -122,13 +123,14 @@ class _CardLabel extends StatelessWidget {
         child: Column(
           children: [
             // Título
-            Expanded(flex: 2, child: labelTitle),
+            labelTitle,
+            const SizedBox(height: 2,),
             // Subtítulo
-            Expanded(flex: 3, child: labelSubtitle),
+            labelSubtitle,
+            const SizedBox(height: 5,),
             
             // Barra de progreso
             Expanded(
-              flex: 4,
               child: _ProgressBar(
                 percentage: percentage,
                 percentageColor: percentageColor,
@@ -212,6 +214,9 @@ class _ProgressBarState extends State<_ProgressBar> with TickerProviderStateMixi
     return Container(
       width: double.infinity,
       height: double.infinity,
+      constraints: const BoxConstraints(
+        maxHeight: 35
+      ),
       padding: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
         color: Colors.grey.shade300,

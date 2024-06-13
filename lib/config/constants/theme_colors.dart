@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 
 class ThemeColors {
 
-    static const primaryColor = Color.fromRGBO(1, 14, 24, 1);
-    static const secondaryColor = Colors.yellow;
+    static const primaryColor = Color(0xFF011322);
+
+    static const secondaryColor = Color(0xFF57E6C7);
 
   }

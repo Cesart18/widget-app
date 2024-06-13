@@ -31,7 +31,7 @@ class CustomItemCard extends StatelessWidget {
                 BoxShadow(
                   offset: Offset(5, -5), 
                   blurRadius: 8, 
-                  color: Color(0xFF021626), 
+                  color: Color(0x1657E6C7), 
                 )
               ]),
           child: Column(
