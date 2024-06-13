@@ -8,9 +8,12 @@ class ProgressBarScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textStyle = Theme.of(context).textTheme;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Progress Screen')
+        title:  Text('Barra de progreso',
+        style: textStyle.titleLarge,
+          )
       ),
       body: const Center(
         child: Hero(tag: ConstantsItems.progressHeroTag, child:  CustomCircularProgressBar()),

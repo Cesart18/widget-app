@@ -9,3 +9,4 @@ export 'services/service_locator.dart';
 
 // constants
 export 'constants/app_menu_items.dart';
+export 'constants/theme_colors.dart';

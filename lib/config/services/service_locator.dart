@@ -8,5 +8,6 @@ GetIt getIt = GetIt.instance;
 void serviceLocatorInit(){
 
   getIt.registerSingleton(ProgressBloc());
+  getIt.registerSingleton(EducationProgressBloc());
 
 }

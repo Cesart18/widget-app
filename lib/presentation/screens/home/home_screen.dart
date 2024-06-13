@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:widgets_app/config/constants/app_menu_items.dart';
+import 'package:widgets_app/config/config.dart';
 import 'package:widgets_app/presentation/presentation.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,9 +8,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Widgets App'),
-      ),
       body: SafeArea(
         child: Center(
           child: Column(

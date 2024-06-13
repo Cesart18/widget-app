@@ -15,7 +15,8 @@ class BlocsProvider extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-          BlocProvider(create: (context) => getIt<ProgressBloc>())
+          BlocProvider(create: (context) => getIt<ProgressBloc>()),
+          BlocProvider(create: (context) => getIt<EducationProgressBloc>()),
       ],
        child: const MyApp());
   }
