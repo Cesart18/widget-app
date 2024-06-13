@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+
 /// Un widget que muestra una tarjeta educativa con una imagen de fondo, título,
 /// subtítulo y una barra de progreso que indica un porcentaje de finalización.
 class EducationCard extends StatelessWidget {
@@ -10,9 +11,10 @@ class EducationCard extends StatelessWidget {
   final Color progressPrimaryColor;
   final Color progressPercentageColor;
   final Color? backgroundColor;
+  final Color labelTextColor;
   final Widget backgroundImage;
-  final Widget labelTitle;
-  final Widget labelSubtitle;
+  final String labelTitle;
+  final String labelSubtitle;
   final double percentage;
   final Function()? onTap;
 
@@ -31,7 +33,8 @@ class EducationCard extends StatelessWidget {
     this.progressPrimaryColor = Colors.black45,
     this.progressPercentageColor = Colors.red,
     this.onTap,
-    this.backgroundColor
+    this.backgroundColor,
+    this.labelTextColor = Colors.black
   }) : assert(percentage >= 0, 'El porcentaje debe ser mayor o igual a 0'),
        assert(percentage <= 100, 'El porcentaje debe ser menor o igual a 100');
 
@@ -56,7 +59,9 @@ class EducationCard extends StatelessWidget {
         child: Stack(
           children: [
             // Sección de imagen de fondo
-            backgroundImage,
+            Align(
+              alignment: Alignment.topCenter,
+              child: backgroundImage),
             if( percentage == 100 ) 
              Positioned(
               top: 5,
@@ -73,6 +78,7 @@ class EducationCard extends StatelessWidget {
                 percentage: percentage,
                 percentageColor: progressPercentageColor,
                 primaryColor: progressPrimaryColor,
+                labelTextColor: labelTextColor,
               ),
             ),
           ],
@@ -88,9 +94,10 @@ class _CardLabel extends StatelessWidget {
   final Color labelColor;
   final Color primaryColor;
   final Color percentageColor;
+  final Color labelTextColor;
   final double percentage;
-  final Widget labelTitle;
-  final Widget labelSubtitle;
+  final String labelTitle;
+  final String labelSubtitle;
 
   /// Crea un [_CardLabel].
   /// 
@@ -103,10 +110,12 @@ class _CardLabel extends StatelessWidget {
     required this.primaryColor,
     required this.percentageColor,
     required this.percentage,
+    required this.labelTextColor
   });
 
   @override
   Widget build(BuildContext context) {
+    final textStyle = Theme.of(context).textTheme;
     return Padding(
       padding: const EdgeInsets.all(10),
       child: Container(
@@ -114,7 +123,8 @@ class _CardLabel extends StatelessWidget {
         height: double.infinity,
         padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 10),
         constraints: const BoxConstraints(
-          maxHeight: 100,
+          maxHeight: 110,
+          minHeight: 100
         ),
         decoration: BoxDecoration(
           color: labelColor,
@@ -123,14 +133,20 @@ class _CardLabel extends StatelessWidget {
         child: Column(
           children: [
             // Título
-            labelTitle,
-            const SizedBox(height: 2,),
-            // Subtítulo
-            labelSubtitle,
-            const SizedBox(height: 5,),
-            
+            Text(labelTitle,
+                style: textStyle.titleMedium?.copyWith(color: labelTextColor),
+                softWrap: true,
+                maxLines: 1,),
+
+                const SizedBox(height: 4,),
+                Text(labelSubtitle,
+                style: textStyle.titleSmall?.copyWith(color: labelTextColor),
+                softWrap: true,
+                maxLines: 1,),
+            const Spacer(),
             // Barra de progreso
             Expanded(
+              flex: 2,
               child: _ProgressBar(
                 percentage: percentage,
                 percentageColor: percentageColor,
@@ -215,7 +231,9 @@ class _ProgressBarState extends State<_ProgressBar> with TickerProviderStateMixi
       width: double.infinity,
       height: double.infinity,
       constraints: const BoxConstraints(
-        maxHeight: 35
+        maxHeight: 40,
+        minHeight: 30
+
       ),
       padding: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
