@@ -1,26 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:widgets_app/config/config.dart';
-import 'package:widgets_app/presentation/presentation.dart';
 
 void main() {
-  serviceLocatorInit();
-  runApp(const BlocsProvider());
+  runApp(const MyApp());
 } 
 
-class BlocsProvider extends StatelessWidget {
-  const BlocsProvider({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-          BlocProvider(create: (context) => getIt<ProgressBloc>()),
-          BlocProvider(create: (context) => getIt<EducationProgressBloc>()),
-      ],
-       child: const MyApp());
-  }
-}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

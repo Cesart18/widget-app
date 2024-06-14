@@ -6,7 +6,3 @@ export 'screens/education_card/education_card_screen.dart';
 // widgets
 export 'widgets/custom_item_card.dart';
 export 'widgets/custom_circular_progress_bar.dart';
-
-// blocs
-export 'blocs/progress/progress_bloc.dart';
-export 'blocs/education_progress/education_progress_bloc.dart';

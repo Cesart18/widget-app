@@ -237,7 +237,7 @@ class _ProgressBarState extends State<_ProgressBar> with TickerProviderStateMixi
       ),
       padding: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
-        color: Colors.grey.shade300,
+        color: Colors.grey.shade200,
         borderRadius: BorderRadius.circular(6),
       ),
       child: Row(

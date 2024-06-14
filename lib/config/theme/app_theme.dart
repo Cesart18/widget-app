@@ -8,8 +8,14 @@ class AppTheme {
   ThemeData getTheme() => ThemeData(
       colorSchemeSeed: ThemeColors.primaryColor,
       scaffoldBackgroundColor: ThemeColors.primaryColor,
-      appBarTheme: const AppBarTheme(backgroundColor: ThemeColors.primaryColor,
-      iconTheme: IconThemeData(color: ThemeColors.secondaryColor)),
+      appBarTheme: const AppBarTheme(
+        backgroundColor: ThemeColors.primaryColor,
+      foregroundColor: ThemeColors.secondaryColor,
+       elevation: 4,
+        shadowColor: ThemeColors.primaryColor,
+        surfaceTintColor: ThemeColors.primaryColor,
+        centerTitle: true
+      ),
       fontFamily: GoogleFonts.poppins().fontFamily,
       textTheme: const TextTheme(
         titleLarge: TextStyle(color: ThemeColors.secondaryColor),

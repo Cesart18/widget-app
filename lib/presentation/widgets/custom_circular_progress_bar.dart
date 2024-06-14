@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:widgets_app/config/config.dart';
-import 'package:widgets_app/presentation/presentation.dart';
 import 'package:widgets_app/shared/shared.dart';
 
 class CustomCircularProgressBar extends StatelessWidget {
@@ -10,12 +8,13 @@ class CustomCircularProgressBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final percentage = context.watch<ProgressBloc>().state.percentage;
 
-    return CircularProgressBar(
-      percentage: percentage,
+
+    return const CircularProgressBar(
+      percentage: 10,
       backgroundColor: Colors.grey,
       percentageColor: ThemeColors.secondaryColor,
+      strokeWidth: 10,
     );
   }
 }

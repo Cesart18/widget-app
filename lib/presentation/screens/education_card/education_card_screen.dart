@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:widgets_app/config/config.dart';
 import 'package:widgets_app/shared/shared.dart';
-import '../../presentation.dart';
+// import '../../presentation.dart';
 
 class EducationCardScreen extends StatelessWidget {
   const EducationCardScreen({super.key});
@@ -11,7 +10,7 @@ class EducationCardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textStyle = Theme.of(context).textTheme;
-    final percentage = context.watch<EducationProgressBloc>().state.percentage;
+
     return Scaffold(
       appBar: AppBar(
         title:  Text('Tarjeta Educativa',
@@ -26,18 +25,13 @@ class EducationCardScreen extends StatelessWidget {
               tag: ConstantsItems.educationHeroTag,
               child: EducationCard(
                 backgroundImage: SvgPicture.asset('assets/svgs/educador.svg'),
-                labelTitle: Text('Lección 1',
-                style: textStyle.titleSmall,),
-                labelSubtitle: Text('¿Que es Excuela?',
-                style: textStyle.titleMedium?.copyWith(
-                  color: Colors.black
-                ),),
-                percentage: percentage,
-              )),
+                 labelTitle: 'Lección 1',
+                  labelSubtitle: '¿Que es Excuela?',
+                  progressPercentageColor: ThemeColors.secondaryColor,
+                   percentage: 20)),
           ),
           const SizedBox(height: 50,),
           FilledButton(onPressed: (){
-            context.read<EducationProgressBloc>().incrementProgres();
           }, child: const Text('Siguiente clase'))
         ],
       ),
