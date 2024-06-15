@@ -30,7 +30,7 @@ class ConstantsItems {
    MenuItem(
       title: 'Quiz',
       link: '/quiz',
-      icon:  Hero(tag: quizHeroTag, child: SvgPicture.asset('assets/svgs/quiz.svg')),
+      icon:  SvgPicture.asset('assets/svgs/quiz.svg'),
       ),
 ];
 

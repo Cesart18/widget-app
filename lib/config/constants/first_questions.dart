@@ -5,13 +5,13 @@
 
 class FirstQuestions {
 
-    static final List<Question> firstQuestions = [
+    static const List<Question> firstQuestions = [
       Question(
         question: '¿Cual es la capital de Guarico?',
          options: [
           'Ortiz',
           'San Juan de los morros',
-          'Valle de la pascua'
+          'Valle de la pascua',
          ],
           correctAnswer: 1),
       Question(
