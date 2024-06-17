@@ -21,5 +21,6 @@ class AppTheme {
         titleLarge: TextStyle(color: ThemeColors.secondaryColor),
         titleMedium: TextStyle(color: ThemeColors.secondaryColor),
         bodyMedium: TextStyle(color: ThemeColors.secondaryColor),
+        headlineLarge: TextStyle(color: Colors.white)
       ));
 }

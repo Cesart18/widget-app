@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 
 /// Un widget que muestra una tarjeta educativa con una imagen de fondo, título,
@@ -147,7 +146,7 @@ class _CardLabel extends StatelessWidget {
             // Barra de progreso
             Expanded(
               flex: 2,
-              child: _ProgressBar(
+              child: LinearProgressBar(
                 percentage: percentage,
                 percentageColor: percentageColor,
                 primaryColor: primaryColor,
@@ -164,25 +163,29 @@ class _CardLabel extends StatelessWidget {
 
 
 /// Un widget que muestra una barra de progreso con un porcentaje.
-class _ProgressBar extends StatefulWidget {
+class LinearProgressBar extends StatefulWidget {
   final double percentage;
   final Color primaryColor;
   final Color percentageColor;
+  final Color? labelColor;
 
-  /// Crea un [_ProgressBar].
+
+  /// Crea un [LinearProgressBar].
   /// 
   /// Los parámetros [percentage], [percentageColor] y [primaryColor] son obligatorios.
-  const _ProgressBar({
+  const LinearProgressBar({
+    super.key,
     required this.percentage,
     required this.percentageColor,
     required this.primaryColor,
+    this.labelColor
   });
 
   @override
-  State<_ProgressBar> createState() => _ProgressBarState();
+  State<LinearProgressBar> createState() => _LinearProgressBarState();
 }
 
-class _ProgressBarState extends State<_ProgressBar> with TickerProviderStateMixin {
+class _LinearProgressBarState extends State<LinearProgressBar> with TickerProviderStateMixin {
 
   late AnimationController _progressController;
   late AnimationController _scaleController;
@@ -237,7 +240,7 @@ class _ProgressBarState extends State<_ProgressBar> with TickerProviderStateMixi
       ),
       padding: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
-        color: Colors.grey.shade200,
+        color: widget.labelColor ?? Colors.grey.shade200 ,
         borderRadius: BorderRadius.circular(6),
       ),
       child: Row(

@@ -7,7 +7,7 @@ class FirstQuestions {
 
     static const List<Question> firstQuestions = [
       Question(
-        question: '¿Cual es la capital de Guarico?',
+        title: '¿Cual es la capital de Guarico?',
          options: [
           'Ortiz',
           'San Juan de los morros',
@@ -15,35 +15,35 @@ class FirstQuestions {
          ],
           correctAnswer: 1),
       Question(
-        question: '¿Cual es la capital de Merida?',
+        title: '¿Cual es la capital de Merida?',
          options: [
           'Merida',
           'Mucuchies',
-          'Tovar'
+          'Tovar',
          ],
           correctAnswer: 0),
       Question(
-        question: '¿Cual es la capital de Carabobo?',
+        title: '¿Cual es la capital de Carabobo?',
          options: [
           'San diego',
-          'Puerto Cabello'
+          'Puerto Cabello',
           'Valencia',
          ],
           correctAnswer: 2),
       Question(
-        question: '¿Cual es la capital de Aragua?',
+        title: '¿Cual es la capital de Aragua?',
          options: [
           'Palo Negro',
           'Maracay',
-          'Cuyagua'
+          'Cuyagua',
          ],
           correctAnswer: 1),
       Question(
-        question: '¿Cual es la capital de Amazonas?',
+        title: '¿Cual es la capital de Amazonas?',
          options: [
           'Puerto Ayacucho',
           'San Fernando de Atabapo',
-          'La Esmeralda'
+          'La Esmeralda',
          ],
           correctAnswer: 0),
     ];
