@@ -7,7 +7,7 @@ class FirstQuestions {
 
     static const List<Question> firstQuestions = [
       Question(
-        title: '¿Cual es la capital de Guarico?',
+        title: '¿Cual es la capital de Guárico?',
          options: [
           'Ortiz',
           'San Juan de los morros',
@@ -15,9 +15,9 @@ class FirstQuestions {
          ],
           correctAnswer: 1),
       Question(
-        title: '¿Cual es la capital de Merida?',
+        title: '¿Cual es la capital de Mérida?',
          options: [
-          'Merida',
+          'Mérida',
           'Mucuchies',
           'Tovar',
          ],

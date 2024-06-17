@@ -250,7 +250,6 @@ class _LinearProgressBarState extends State<LinearProgressBar> with TickerProvid
             Icons.flag_circle,
             color: (widget.percentage == 0) ? Colors.grey.shade400 : widget.percentageColor,
           ),
-          const SizedBox(width: 5),
           // barra de progreso
           AnimatedBuilder(
             animation: _progressController,
@@ -267,7 +266,6 @@ class _LinearProgressBarState extends State<LinearProgressBar> with TickerProvid
              },),
 
         // icono estrella
-          const SizedBox(width: 5),
           AnimatedBuilder(
             animation: _scaleController,
              builder: (context, child) {
